@@ -32,7 +32,7 @@ public class MongoDBAnnouncementsRepository implements AnnouncementsRepository {
 
     @PostConstruct
     void init() {
-        announcementsCollection = client.getDatabase("iuc-news-app-db").getCollection("announcements", AnnouncementsEntity.class);
+        announcementsCollection = client.getDatabase(System.getenv("MONGODB_DATABASE")).getCollection("announcements", AnnouncementsEntity.class);
     }
 
     @Override
