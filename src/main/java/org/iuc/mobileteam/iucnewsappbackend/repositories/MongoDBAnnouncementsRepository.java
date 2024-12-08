@@ -32,7 +32,7 @@ public class MongoDBAnnouncementsRepository implements AnnouncementsRepository {
 
     @PostConstruct
     void init() {
-        announcementsCollection = client.getDatabase("iuc-news-app").getCollection("announcements", AnnouncementsEntity.class);
+        announcementsCollection = client.getDatabase("iuc-news-app-db").getCollection("announcements", AnnouncementsEntity.class);
     }
 
     @Override
@@ -49,6 +49,9 @@ public class MongoDBAnnouncementsRepository implements AnnouncementsRepository {
                 announcementsCollection.insertMany(clientSession, announcements);
                 return announcements;
             }, txnOptions);
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
