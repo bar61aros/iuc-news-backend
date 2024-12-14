@@ -20,8 +20,11 @@ data class AnnouncementsEntity (
     val readCount: Int? = null,
 
     @Column(nullable = false)
-    val createdAt: Date? = null,
+    val publishDate: Date? = null,
 
     @Column(nullable = false)
-    val originURL: String? = null
+    val originURL: String? = null,
+
+    @Column(nullable = false)
+    val createdAt: Date? = Date()
 )

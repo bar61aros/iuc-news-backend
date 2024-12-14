@@ -12,7 +12,7 @@ class AnnouncementsService(private val announcementsRepository: AnnouncementsRep
 
     fun createAnnouncement(announcement: AnnouncementsEntity) = announcementsRepository.save(announcement)
 
-    fun updateAnnouncement(announcement: AnnouncementsEntity) = announcementsRepository.save(announcement)
+    fun updateAnnouncements(annoucements: List<AnnouncementsEntity>) = announcementsRepository.saveAll(annoucements)
 
-    fun deleteAnnouncement(id: Long) = announcementsRepository.deleteById(id)
+    fun deleteAllAnnouncements() = announcementsRepository.deleteAll()
 }
