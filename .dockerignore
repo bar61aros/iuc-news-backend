@@ -1,0 +1,22 @@
+# Gradle files
+.gradle
+/build
+
+# Java files
+*.class
+*.jar
+*.war
+
+# Logs
+logs/
+*.log
+
+# IntelliJ IDEA files
+.idea/
+
+# Node modules (if any)
+node_modules/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
